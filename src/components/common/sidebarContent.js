@@ -291,10 +291,15 @@ export default function SidebarContent(props) {
                 }}
             />
             <ReusableDiv
-                style={{
+                style={isMobile ? {
                     display: "flex",
                     gap: "15.33px",
                     marginTop: '10px',
+                    paddingLeft: '5px'
+                } : {
+                    display: "flex",
+                    gap: "15.33px",
+                    marginTop: '60px',
                     paddingLeft: '5px'
                 }}
                 imgSrc={process.env.PUBLIC_URL + "/assets/images/pic.png"}

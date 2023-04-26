@@ -206,13 +206,16 @@ export default function MobileDashboard(props) {
                 </div>
                 <div style={{
                     width: '90%',
-                    height: "570px",
+                    height: "370px",
                     paddingTop: "32px",
-                    paddingLeft: '24px',
-                    paddingRight: "24px",
-                    paddingBottom: '22px'
+                    
+                    paddingBottom: '22px',
                 }}>
-                    <LineChartComp />
+                    <LineChartComp
+                        dateAndMonths={props.dateAndMonths}
+                        viewsValues={props.viewsValues}
+                        graphValues={props.graphValues}
+                    />
                 </div>
                 <div style={{
                     display: 'flex',
@@ -223,11 +226,13 @@ export default function MobileDashboard(props) {
                     width: "87%",
                     height: "230px",
                     border: "1px solid #EFF1F6",
-                    borderRadius: "6px"
+                    borderRadius: "6px",
+                    marginTop: "60px"
                 }}>
                     <TopLocationsPieChart
                         flags={props.flags}
                         allData={props.allData}
+                        colors={props.colors}
                     />
                 </div>
                 <div style={{
@@ -245,6 +250,7 @@ export default function MobileDashboard(props) {
                     <TopReferralPieChart
                         socials={props.socials}
                         allData={props.allData}
+                        socialColors={props.socialColors}
                     />
                 </div>
             </div>

@@ -117,13 +117,17 @@ export default function DashboardMain(props) {
                 </div>
                 <div style={{
                     width: '90%',
-                    height: "570px",
+                    height: "370px",
                     paddingTop: "32px",
                     paddingLeft: '24px',
                     paddingRight: "24px",
                     paddingBottom: '22px'
                 }}>
-                    <LineChartComp />
+                    <LineChartComp
+                        dateAndMonths={props.dateAndMonths}
+                        viewsValues={props.viewsValues}
+                        graphValues={props.graphValues}
+                    />
                 </div>
                 <div style={{
                     display: 'flex',
@@ -146,6 +150,7 @@ export default function DashboardMain(props) {
                         <TopLocationsPieChart
                             flags={props.flags}
                             allData={props.allData}
+                            colors={props.colors}
                         />
                     </div>
                     <div style={{
@@ -162,6 +167,7 @@ export default function DashboardMain(props) {
                         <TopReferralPieChart
                             socials={props.socials}
                             allData={props.allData}
+                            socialColors={props.socialColors}
                         />
                     </div>
                 </div>

@@ -9,6 +9,11 @@ export default function DashboardContent(props) {
                 flags={props.flags}
                 allData={props.allData}
                 socials={props.socials}
+                colors={props.colors}
+                socialColors={props.socialColors}
+                dateAndMonths={props.dateAndMonths}
+                viewsValues={props.viewsValues}
+                graphValues={props.graphValues}
             />
         </>
     )

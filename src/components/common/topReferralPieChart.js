@@ -1,4 +1,5 @@
 import { Form } from "react-bootstrap";
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 export default function TopReferralPieChart(props) {
     return (
@@ -150,6 +151,30 @@ export default function TopReferralPieChart(props) {
                             return result
                         })}
                     </div>
+                </div>
+                <div style={{
+                    width: "48%",
+                    display: 'flex',
+                    gap: '10px',
+                    marginTop: '-30px'
+                }}>
+                    <ResponsiveContainer width="100%" aspect={1}>
+                        <PieChart width={160} height={160}>
+                            <Pie
+                                data={props.allData?.top_sources}
+                                cx={"50%"}
+                                cy={"50%"}
+                                innerRadius={30}
+                                outerRadius={50}
+                                fill="#82ca9d"
+                                dataKey="percent">
+                                {props.allData?.top_sources.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={props.socialColors[index % props.socialColors?.length]} />
+                                ))}
+                            </Pie>
+                            {/* <Tooltip content={<CustomTooltip />} /> */}
+                        </PieChart>
+                    </ResponsiveContainer>
                 </div>
             </div>
         </>
